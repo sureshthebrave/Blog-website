@@ -1,0 +1,96 @@
+{% extends 'base.html'%} {% load static %}
+
+<br /><br /><br />
+
+<!-- post section start -->
+
+{% block content %}
+
+<section id="Blog">
+  <div class="container-fluid py-5 bg-dark border-bottom mb-4 text-warning">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">My Post</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Page content-->
+<div class="container">
+  <div class="row">
+    <!-- Blog entries-->
+    <div class="col-lg-8">
+      <!-- Featured blog post-->
+
+      <div class="card mb-4">
+        <a href="#"
+          ><img class="card-img-top" src="{{post.thumbnail.url}}" alt="..."
+        /></a>
+        <div class="card-body">
+          <div class="small text-muted">
+            {{post.posted_at}}<span
+              >/<a href="#" class="text-dark text-decoration-none"
+                >{{post.user}}</a
+              ></span
+            >/<a href="#" class="text-dark text-decoration-none"
+              >{{post.category}}</a
+            >
+          </div>
+          <a href="#" class="text-decoration-none"
+            ><h2 class="card-title text-dark">{{post.title}}</h2></a
+          >
+          <p class="card-text">{{post.description}}</p>
+        </div>
+      </div>
+
+      <!-- Nested row for non-featured blog posts-->
+      <div class="row"></div>
+    </div>
+    <!-- Side widgets-->
+    <div class="col-lg-4">
+      <!-- Search widget-->
+      <div class="card mb-4">
+        <div class="card-header">Search</div>
+        <div class="card-body">
+          <form action="{% url 'search' %}" method="get">
+            <div class="input-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="Search Here"
+                aria-label="Search Here"
+                aria-describedby="button-search"
+                name="keyword"
+              />
+              <button class="btn btn-primary" id="button-search" type="submit">
+                Go!
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Categories widget-->
+      <div class="card mb-4">
+        <div class="card-header">Categories</div>
+        <div class="card-body">
+          <div class="row">
+            {% for category in categories %}
+            <div class="col-sm-6">
+              <ul class="list-unstyled mb-0">
+                <li>
+                  <a href="{% url 'category' category.name %}"
+                    >{{category.name}}</a
+                  >
+                </li>
+              </ul>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+<!-- post section end -->

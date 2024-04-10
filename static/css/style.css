@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* navbar section start */
+.nav{
+    background-color: blue;
+}
+
+.nav-item .nav-link{
+    color: white;
+    font-weight: 500;
+}
+
+
+.nav-item .nav-link:hover{
+    /* background-color: ; */
+    /* border-radius: 5px; */
+    transition: 1s;
+    color: black;
+}
+.c{
+    position: absolute;
+    left: 30%;
+}
+
+
+
+.btn button a{
+    color: white;
+    font-weight: 500;
+}
+.btn button a:hover{
+    color: black;
+}
+
+/* navbar section end */
+
+
+/* signup section start */
+
+.form-control {
+    height: 41px;
+    background: #f2f2f2;
+    border: none;
+}
+.form-control, .btn {        
+    border-radius: 3px;
+}
+.signup-form {
+    width: 400px;
+    /* margin: 30px auto; */
+}
+.signup-form form {
+    color: #999;
+    border-radius: 3px;
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.signup-form h2  {
+    color: #333;
+    font-weight: bold;
+    margin-top: 0;
+}
+.signup-form hr  {
+    margin: 0 -30px 20px;
+}    
+.signup-form .form-group {
+    margin-bottom: 20px;
+}
+.signup-form input[type="checkbox"] {
+    margin-top: 3px;
+}
+.signup-form .btn {        
+    font-size: 16px;
+    font-weight: bold;
+    background: #3598dc;
+    border: none;
+    min-width: 140px;
+}
+.signup-form .btn:hover, .signup-form .btn:focus {
+    background: #2389cd !important;
+    outline: none;
+}
+.signup-form a:hover {
+    text-decoration: none;
+}
+.signup-form form a {
+    color: #3598dc;
+    text-decoration: none;
+}	
+.signup-form form a:hover {
+    text-decoration: underline;
+}
+.signup-form .hint-text  {
+    padding-bottom: 15px;
+    text-align: center;
+}
+.hint-text a:hover{
+    text-decoration: underline;
+}
+
+/* signup section end */
+
+

@@ -1,0 +1,83 @@
+{% extends 'base.html'%} {% load static %} <br /><br /><br />
+
+{% block content %}
+<!-- contact section start -->
+
+<section id="contact">
+  <div class="container-fluid py-5 bg-dark border-bottom mb-4 text-warning">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">Contact Us</h1>
+    </div>
+  </div>
+</section>
+
+<br /><br />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+      <img
+        src="{% static 'images/contact.avif' %}"
+        alt=""
+        width="100%"
+        height="600px"
+      />
+    </div>
+
+    <div class="col-md-5">
+      <div class="signup-form">
+        <form action="" method="post">
+          {% csrf_token %}
+          <h2>Contact Us</h2>
+          <hr />
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              name="name"
+              placeholder="Your Name"
+              required="required"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              placeholder="Your Email"
+              required="required"
+            />
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              style="height: 60px"
+              id="exampleFormControlTextarea1"
+              rows="4"
+              placeholder="Subject"
+              name="subject"
+            ></textarea>
+          </div>
+          <div class="mb-3">
+            <textarea
+              class="form-control"
+              style="height: 100px"
+              id="exampleFormControlTextarea1"
+              rows="4"
+              placeholder="Enter Your Message"
+              name="message"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- contact section end -->
+
+{% endblock %}

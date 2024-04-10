@@ -1,0 +1,81 @@
+{% extends 'base.html'%} 
+{% load static %}
+
+<br /><br /><br />
+
+<!-- categories section start -->
+
+{% block content %}
+
+<section id="Blog">
+  <div class="container-fluid py-5 bg-dark border-bottom mb-4 text-warning">
+    <div class="text-center my-5">
+      <h1 class="fw-bolder">My Categories</h1>
+    </div>
+  </div>
+</section>
+
+<!-- Page content-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8">
+            <!-- Featured blog post-->
+            {% for post in posts %}
+      
+            <div class="card mb-4">
+              <a href="/post/{{post.title}}"
+                ><img class="card-img-top" src="{{post.thumbnail.url}}" alt="..."
+              /></a>
+              <div class="card-body">
+                <div class="small text-muted">
+                  {{post.posted_at}}<span
+                    >/<a href="/post/{{post.title}}" class="text-dark text-decoration-none">{{post.user}}</a></span
+                  >/<a href="/post/{{post.title}}" class="text-dark text-decoration-none">{{post.category}}</a>
+                </div>
+                <a href="/post/{{post.title}}" class="text-decoration-none"
+                  ><h2 class="card-title text-dark ">{{post.title}}</h2></a
+                >
+          <p class="card-text">{{post.description}}</p>
+
+              </div>
+            </div>
+            {% endfor %}            
+            <!-- Nested row for non-featured blog posts-->
+            <div class="row">
+            </div>
+        </div>
+        <!-- Side widgets-->
+        <div class="col-lg-4">
+            <!-- Search widget-->
+            <div class="card mb-4">
+                <div class="card-header">Search</div>
+                <div class="card-body">
+                    <div class="input-group">
+                        <input class="form-control" type="text" placeholder="Enter search term..." aria-label="Enter search term..." aria-describedby="button-search" />
+                        <button class="btn btn-primary" id="button-search" type="button">Go!</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Categories widget-->
+            <div class="card mb-4">
+                <div class="card-header">Categories</div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for category in categories %}
+                        <div class="col-sm-6">
+                            <ul class="list-unstyled mb-0">
+                                <li><a href="{% url 'category' category.name %}">{{category.name}}</a></li>
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
+<!-- categories section start -->
